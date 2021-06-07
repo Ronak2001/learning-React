@@ -43,7 +43,8 @@ const languages = [
 const languageObject = languages.map((language,i)=>
 ({id:i, title:language}));
 
-function App() {
+function App(props) {
+  if(props.authorized){
   return (
     <div className="App">
       <Header name="Ronak"/>
@@ -51,6 +52,10 @@ function App() {
       <Footer year={new Date().getFullYear()} />
     </div>
   );
+  }
+  else{
+    return (null)
+  }
 }
 
 export default App;
