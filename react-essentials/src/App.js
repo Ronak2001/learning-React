@@ -1,27 +1,27 @@
 import './App.css';
 
-function Header() {
+function Header(props) {
   return (
     <header>
-      <h1>Ronak's Code</h1>
+      <h1>{props.name}'s Code</h1>
     </header>
   );
 }
 
-function Main() {
+function Main(props) {
   return (
     <main>
       <p>
-        Ronak is learning React.
+        Ronak is learning {props.language}.
       </p>
     </main>
   );
 }
 
-function Footer() {
+function Footer(props) {
   return (
     <footer>
-      He got this.
+      He will this by end of year {props.year}.
     </footer>
   );
 }
@@ -29,9 +29,9 @@ function Footer() {
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <Header name="Ronak" />
+      <Main language="React" />
+      <Footer year={new Date().getFullYear(2022)} />
     </div>
   );
 }
