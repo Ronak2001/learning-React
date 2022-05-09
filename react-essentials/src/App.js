@@ -14,12 +14,9 @@ function Main(props) {
       <p>
         Ronak is learning {props.language}.
       </p>
-      <p>
-        He already knows
-        <ul>
-          {props.languages.map((language) => (<li>{language}</li>))}
-        </ul>
-      </p>
+      <ul style={{ textAlign: "left" }}>
+        {props.languages.map((language) => (<li key={language.id}>{language.title}</li>))}
+      </ul>
     </main>
   );
 }
@@ -38,11 +35,14 @@ const languages = [
   "Python"
 ];
 
+//converting array to object to solve key issue
+const languagesObject = languages.map((language, i) => ({ id: i, title: language }));
+
 function App() {
   return (
     <div className="App">
       <Header name="Ronak" />
-      <Main language="React" languages={languages} />
+      <Main language="React" languages={languagesObject} />
       <Footer year={new Date().getFullYear(2022)} />
     </div>
   );
