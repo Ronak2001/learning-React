@@ -14,6 +14,12 @@ function Main(props) {
       <p>
         Ronak is learning {props.language}.
       </p>
+      <p>
+        He already knows
+        <ul>
+          {props.languages.map((language) => (<li>{language}</li>))}
+        </ul>
+      </p>
     </main>
   );
 }
@@ -26,11 +32,17 @@ function Footer(props) {
   );
 }
 
+const languages = [
+  "Java",
+  "Javascript",
+  "Python"
+];
+
 function App() {
   return (
     <div className="App">
       <Header name="Ronak" />
-      <Main language="React" />
+      <Main language="React" languages={languages} />
       <Footer year={new Date().getFullYear(2022)} />
     </div>
   );
