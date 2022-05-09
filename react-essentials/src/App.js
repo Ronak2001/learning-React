@@ -1,4 +1,5 @@
 import './App.css';
+import logo from "./logo.svg";
 
 function Header(props) {
   return (
@@ -11,9 +12,11 @@ function Header(props) {
 function Main(props) {
   return (
     <main>
+      <img src="https://github.com/Ronak2001.png" height="100" alt="Ronak's github profile picture" />
       <p>
         Ronak is learning {props.language}.
       </p>
+      <img src={logo} height="50" alt="react logo" />
       <ul style={{ textAlign: "left" }}>
         {props.languages.map((language) => (<li key={language.id}>{language.title}</li>))}
       </ul>
